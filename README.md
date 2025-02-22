@@ -131,7 +131,7 @@ O código pode ser consultado nas seções 0 a 3 do arquivo [Jupyter Notebook](h
 
 A inspeção dos dados (seção 1.1 do código) mostrou a existência de 135.080 registros nos quais **customer_id** = NaN. É um percentual elevado, correspondente a 24,9% da base. O tratamento para fins de clusterização teve duas abordagens.
 
-- Na primeira rodada do CRISP-DM, buscou-se aproveitar esses dados, sintetizando-se valores fictícios para os dados faltantes. A clusterização ótima se deu com aproximadamente 32 clusters. Ao final, consideramos inapropriado o resultado, pois os clientes fictícios atuariam como ruído, dificultando a clusterização dos clientes reais.
+- Na primeira rodada do CRISP-DM, buscou-se aproveitar esses dados, sintetizando-se valores fictícios para os dados faltantes. Como resultado, a clusterização ótima se deu com aproximadamente 32 clusters. Ao final, consideramos inapropriado o resultado, pois os clientes fictícios atuariam como ruído, dificultando a clusterização dos clientes reais.
 
 - Na segunda abordagem, os 135.080 registros foram descartados, o que resultou numa clusterização mais assertiva, com 22 clusters. Esta foi a solução final adotada para este projeto.
 
@@ -303,7 +303,7 @@ A partir da informação dos países dos clientes, experimentou-se a criação d
 
 Ideia: haverá alguma semelhança entre clientes que comprem sempre às segundas-feiras, ou aos sábados? Do mesmo modo, haverá semelhanças entre clientes que comprem sempre no dia 10 de cada mês?
 
-Para capturar esse tipo de comportamento, a receita bruta de cada cliente foi distribuída entre os sete dias da semana, de acordo com as respectivas datas de compra. Do mesmo modo, a receita bruta foi distribuída entre os 31 dias do mês. Os valores distribuídos foram transformados em percentuais, gerando as *features* de faturamento por dia da semana e por dia do mês.
+Para capturar esse tipo de comportamento, a receita bruta de cada cliente foi distribuída entre os sete dias da semana, de acordo com as respectivas datas de compra. Do mesmo modo, a receita bruta foi distribuída entre os 31 dias do mês. Os valores distribuídos foram transformados em percentuais, gerando sete *features* de faturamento por dia da semana e 31 *features* por dia do mês.
 
 O processamento inicia-se na seção 3.1.1 e é concluído na seção 3.3 do código.
 
@@ -395,7 +395,7 @@ Com a utilização desse procedimento, e após quase 20 horas de processamento, 
 
 Conforme descrito acima ([seção 7](#7-clusteriza%C3%A7%C3%A3o-com-embedding-baseado-em-%C3%A1rvore-de-decis%C3%A3o)), a clusterização é realizada em 3 etapas. Mas quais são os algoritmos mais eficientes em cada etapa? E quais são os melhores valores para seus hiperparâmetros?
 
-Para responder a esses questionamentos, rodamos a seguinte sequência de códigos de otimização (seção 6 do código):
+Para responder a esses questionamentos, rodamos a seguinte sequência de passos de otimização (seção 6 do código):
 
 1. teste do tipo de algoritmo de árvore: RandomForest, ExtraTrees, LightGbm, CatBoost, XGBoost.
 2. variação do hiperparâmetro *n_estimators* (número de estimadores) da árvore eleita no passo anterior.
@@ -408,6 +408,8 @@ Os testes indicaram como melhor seleção o seguinte conjunto de algoritmos e hi
 - UMAP com dimensão 43,
 - clusterização com GMM - *Gaussian Mixture Model*, e
 - número de clusters = 22.
+
+Observar que algumas vezes UMAP recebe dimensão de 2 quando o objetivo é visualizar em 2D uma base de dados multidimensional. Por outro lado, para fins de otimização, a dimensão será escolhida pelo algoritmo de otimização, conforme descrito nesta seção.
 
 Abaixo o gráfico do indicador *silhouette score* em função do número K de clusters, indicando silhueta máxima de 85,65% para K = 22.
 
@@ -428,7 +430,7 @@ O modelo com 22 clusters pode ser visualizado em duas dimensões conforme imagem
 
 # 10. ANÁLISE DOS CLUSTERS SEGUNDO CRITÉRIOS DE NEGÓCIO
 
-Uma vez obtida a divisão de clusters considerada ótima sob os critérios de *machine learning*, partiu-se para sua avaliação em termos de atendimento aos requisitos de negócio para implantação de estratégias de marketing.
+Uma vez obtida a divisão de clusters considerada ótima sob os critérios de *machine learning*, partimos para a avaliação em termos de atendimento aos requisitos de negócio com vistas à implantação de estratégias de marketing.
 
 Apuradas as estatísticas para cada cluster (seção 7.2 do código), verificou-se que a manutenção de um elevado número de grupos não seria apropriado para a análise por parte dos gerentes de negócio e das equipes de marketing. O interesse principal já manifestado pela empresa recaía nos clientes com elevada geração de receita.
 
@@ -436,12 +438,12 @@ A solução encontrada foi a de manter a clusterização ótima, obtida com 22 c
 
 Assim, foram mantidos os 4 clusters de maior geração de receita média por cliente, e junção dos demais 18 clusters em apenas 4, da seguinte forma (seção 7.3 do código):
 
-- dentre os 18, fusão n.1: clusters com alta receita e alta recência,
+- dentre os 18 - fusão n.1: clusters com alta receita e alta recência,
 - fusão n.2: clusters com alta receita e baixa recência,
 - fusão n.3: clusters com baixa receita e alta recência, e
 - fusão n.4: clusters com baixa receita e baixa recência.
 
-O resultado gráfico da fusão de clusters pode ser observado na imagem a seguir (seção 7.3 do código), na qual os quatro clusters mais importantes foram marcados com cruzes, o mais populoso e de menor receita ("*Lost Customers*") foi marcado com quadrados e os demais com círculos:
+O resultado gráfico da fusão de clusters pode ser observado na imagem a seguir (seção 7.3 do código), na qual os quatro clusters mais importantes foram marcados com cruzes, o cluster mais populoso e de menor receita ("*Lost Customers*") foi marcado com quadrados e os demais com círculos:
 
 <table align="center">
 <tr><td>
