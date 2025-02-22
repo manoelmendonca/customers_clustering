@@ -574,7 +574,7 @@ Hipótese <b>FALSA</B>: a taxa de devolução do cluster-0 "*Elite Spenders*" é
 
 O sistema de *machine learning* resultante é aquele dado pelo arquivo [Jupyter Notebook](https://github.com/manoelmendonca/customers_clustering/blob/main/notebooks/insider_customers.ipynb) desenvolvido ao longo deste projeto e disponível no repositório do GitHub.
 
-O sistema se baseia em procedimento de clusterização com *embedding* baseado em árvore de decisão ([seção 7](#7-clusteriza%C3%A7%C3%A3o-com-embedding-baseado-em-%C3%A1rvore-de-decis%C3%A3o)), seguida da fusão dos clusters considerados de menor interesse segundo critérios de negócio ([seção 10](#10-an%C3%A1lise-dos-clusters-segundo-crit%C3%A9rios-de-neg%C3%B3cio)). As principais etapas da estratégia de *machine learning* são:
+O sistema se baseia em procedimento de clusterização com *embedding* baseado em árvore de decisão ([seção 7](#7-clusteriza%C3%A7%C3%A3o-com-embedding-baseado-em-%C3%A1rvore-de-decis%C3%A3o)), seguido da fusão dos clusters considerados de menor interesse segundo critérios de negócio ([seção 10](#10-an%C3%A1lise-dos-clusters-segundo-crit%C3%A9rios-de-neg%C3%B3cio)). As principais etapas da estratégia de *machine learning* são:
 
 - uso de *random forest* para classificação dos indivíduos,
 - uso de UMAP para redução de dimensionalidade das folhas geradas pela *random forest*,
@@ -582,7 +582,7 @@ O sistema se baseia em procedimento de clusterização com *embedding* baseado e
 - fusão de clusters com base em critérios de negócio.
 
 
-# 13. RESULTADOS-III: DASHBOARD EM POWER BI
+# 13. RESULTADOS-III: <i>DASHBOARD</i> EM POWER BI
 
 Com o objetivo de permitir a consulta aos resultados do procedimento de clusterização de clientes, foi preparado um sistema de *dashboards* em PowerBI, de modo a facilitar a consulta e análise dos dados por parte dos gerentes de negócio e equipe de marketing.
 
