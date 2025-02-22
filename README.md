@@ -31,7 +31,7 @@ A tarefa da equipe de ciência de dados consiste em determinar os clientes eleg�
 
 # 3. PLANEJAMENTO DA SOLUÇÃO
 
-A solução para o problema de negócio descrito está na utilização de algoritmos de clusterização, os quais permitem identificar grupos de pessoas semelhantes em uma população e então alocá-las aos respectivos grupos, ou CLUSTERS.
+A solução para o problema de negócio descrito está na utilização de algoritmos de clusterização, os quais permitem identificar grupos de pessoas semelhantes em uma população e então alocá-las aos respectivos grupos, ou clusters.
 
 ## 3.1. Produto Final
 
