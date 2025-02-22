@@ -37,11 +37,11 @@ A solução para o problema de negócio descrito está na utilização de algori
 
 Conforme apresentado acima, o objetivo é treinar algoritmos de clusterização para identificar os clientes aptos a participarem da campanha de marketing PROGRAMA DE FIDELIDADE INSIDERS. Assim, a solução apresentada compreende a entrega dos seguintes resultados:
 
-1. [Resultado nº 1](#11-resultado-i-principais-insights-de-neg%C3%B3cio) - Insights relacionados ao rol de clientes, em especial quanto aos clientes mais aptos para participação no PROGRAMA INSIDERS.
+- [Resultado nº 1](#11-resultado-i-principais-insights-de-neg%C3%B3cio) - Insights relacionados ao rol de clientes, em especial quanto aos clientes mais aptos para participação no PROGRAMA INSIDERS.
 
-2. [Resultado nº 2](#12-resultado-ii-sistema-de-machine-learning-para-segmenta%C3%A7%C3%A3o-de-clientes) - Sistema de <i>machine learning</i> em linguagem Python para segmentação de clientes.
+- [Resultado nº 2](#12-resultado-ii-sistema-de-machine-learning-para-segmenta%C3%A7%C3%A3o-de-clientes) - Sistema de <i>machine learning</i> em linguagem Python para segmentação de clientes.
 
-3. [Resultado nº 3](#13-resultados-iii-dashboard-em-power-bi) - Dashboard em Power BI para utilização pela equipe de marketing, permitindo a visualização dinâmica dos clusters, seus principais indicadores de desempenho (KPIs), e o rol de clientes integrantes de cada cluster.
+- [Resultado nº 3](#13-resultados-iii-dashboard-em-power-bi) - Dashboard em Power BI para utilização pela equipe de marketing, permitindo a visualização dinâmica dos clusters, seus principais indicadores de desempenho (KPIs), e o rol de clientes integrantes de cada cluster.
 
 
 ## 3.2. Estratégia de Solução
@@ -101,9 +101,6 @@ Os dados estão disponíveis no arquivo ECOMMERCE.CSV, num conjunto de 541.909 r
 </table>
 
 
-(Fonte: [Kaggle](https://www.kaggle.com/vik2012kvs/high-value-customers-identification))
-
-
 Os dados apresentam uma estrutura típica de **NOTA FISCAL**, com informações relativas aos seguintes elementos:
 
 1. **EMPRESA VENDEDORA** de bens ou serviços, juntamente com seus dados cadastrais, como nome, endereço e número de registro junto aos órgãos oficiais. No nosso caso prático, por tratar-se de uma única empresa, essa informação não consta da base CSV.
@@ -142,7 +139,7 @@ Como última observação, caso esses 135.080 registros sejam importantes para u
 
 ## 5.2. Estatística descritiva
 
-A seção 1.5 do código apresenta notas detalhadas descrevendo as particularidades da base de dados, bem assim a conclusão quanto a manutenção ou deleção dos dados em cada caso. O objetivo de tais notas foi o de garantir a máxima qualidade dos dados a serem apresentados para os algoritmos de *machine learning*. Aos interessados, sugerimos que leiam diretamente a seção 1.5 no [notebook](https://github.com/manoelmendonca/customers_clustering/blob/main/notebooks/insider_customers.ipynb).
+A seção 1.5 do código apresenta notas detalhadas descrevendo as particularidades da base de dados, bem assim a conclusão quanto a manutenção ou deleção dos dados em cada caso. O objetivo de tais notas foi o de garantir a máxima qualidade dos dados a serem apresentados para os algoritmos de *machine learning*. Aos interessados, sugerimos a leitura da seção 1.5 no [notebook](https://github.com/manoelmendonca/customers_clustering/blob/main/notebooks/insider_customers.ipynb).
 
 As variáveis numéricas têm as características apresentadas na tabela abaixo (seção 1.5.1 do código).
 
@@ -337,9 +334,9 @@ A montagem final dos nomes foi feita juntando, de modo aleatório, um nome segui
 Na seção 4 do código foi realizada a análise univariada dos dados constantes da base, de modo a verificar, para cada *feature*:
 
 - se a média e a mediana estariam próximas, a faixa de distribuição dos valores, e se as informações parecem naturais ou se há a possibilidade de *outliers*,
-- O coeficiente de variação (CV) se tem valores compatíveis com a média
+- Se o coeficiente de variação (CV) tem valores compatíveis com a média
 - Se os valores extremos são aceitáveis ou se seriam *outliers*
-- remoção de valores indevidos ou errados (=*trash*)
+- então, remoção de valores indevidos ou errados (=*trash*)
 
 Para realização dessas análises, fez-se uso da biblioteca *ydata_profiling* e da sua função *ProfileReport*. Os resultados permitiram a elaboração de uma série de notas de observação bastante detalhadas, constantes das seções 4.1.13 e 1.5 do código.
 
@@ -361,7 +358,7 @@ O método de incorporação (ou *embedding*) consiste "em uma representação de
 </td></tr>
 </table>
 
-A próxima figura apresenta a base de dados do projeto submetida ao procedimento de classificação por *random forest* seguido de redução de dimensionalidade por UMAP. Observa-se que, diferente da figura anterior, neste caso foi possível gerar uma grande quantidade de grupos bem separados entre si, o que certamente se reflete na maior eficiência do algoritmo de clusterização.
+A próxima figura apresenta a base de dados do projeto submetida ao procedimento de classificação por *random forest* seguido de redução de dimensionalidade por UMAP. Observa-se que, diferente da figura anterior, neste caso foi possível gerar uma grande quantidade de grupos bem separados entre si, o que certamente se refletirá em maior eficiência do algoritmo de clusterização.
 
 <table align="center">
 <tr><td>
@@ -369,23 +366,23 @@ A próxima figura apresenta a base de dados do projeto submetida ao procedimento
 </td></tr>
 </table>
 
-Entre as vantagens dessa estratégia no presente projeto está a obtenção de agrupamentos de qualidade elevada, haja vista os altos níveis obtidos para o indicador *silhouette score*, superiores a 80%.
+Entre as vantagens dessa estratégia no presente projeto está a obtenção de agrupamentos de qualidade elevada, haja vista os altos níveis obtidos para o indicador *silhouette score*, superiores a 80% no presente projeto.
 
-Por outro lado, o aspecto negativo está na impossibilidade de interpretação dos resultados, ou seja, não há uma explicação clara dos motivos que levam determinados indivíduos a terem sido colocados em um mesmo cluster.
+Por outro lado, o aspecto negativo está na impossibilidade de interpretação dos resultados, ou seja, não há uma explicação clara dos motivos que levaram determinados indivíduos a terem sido colocados em um mesmo cluster.
 
 
 # 8. SELEÇÃO DE *FEATURES*
 
-Após a etapa de *feature engineering* resultar na criação de 50 colunas na base de dados, torna-se necessário averiguar quais seriam realmente capazes de melhorar o desempenho do modelo.
+Após a etapa de *feature engineering* resultar na criação de 50 colunas na base de dados, torna-se necessário averiguar quais dessas *features* seriam realmente capazes de melhorar o desempenho do modelo.
 
 No presente projeto, partimos do modelo com todas as 50 *features* e aplicamos a técnica de eliminação recursiva de *features* (ou *Recursive Feature Elimination* - RFE). É denominado de procedimento de "força bruta", visto demandar muito recurso de processamento.
 
 O método (seção 5.3 do código) foi construído com os seguintes passos:
 
 1. rodar o modelo com todas as 50 *features* possíveis, para estabelecer o desempenho de referência;
-2. iniciar o procedimento RFE em dois laços:
+2. iniciar o procedimento de eliminação recursiva (RFE) em dois laços:
 3. LOOP-externo: controla a redução, uma a uma, do número de *features* no conjunto de teste
-4. LOOP-interno: dado o conjunto de N *features* de teste, rodar o modelo N vezes, excluindo uma das *features* a cada vez
+4. LOOP-interno: dado o conjunto de N *features* de teste (definido no LOOP-externo), rodar o modelo N vezes, excluindo uma das *features* a cada vez
 5. Calcular o *silhouette score* e verificar se houve melhora no desempenho do modelo sem aquela feature. Em caso positivo, tem-se uma *feature* "campeã", candidata a exclusão.
 6. Fim do LOOP-interno
 7. Salvar a *feature* campeã e atualizar a lista de *features* sob teste, excluindo a "campeã"
@@ -396,7 +393,7 @@ Com a utilização desse procedimento, e após quase 20 horas de processamento, 
 
 # 9. OTIMIZAÇÃO DOS MODELOS DE *MACHINE LEARNING*
 
-Conforme descrito acima (seção 7), a clusterização é realizada em 3 etapas. Mas quais são os algoritmos mais eficientes em cada etapa? E quais são os melhores valores para seus hiperparâmetros?
+Conforme descrito acima ([seção 7](#7-clusteriza%C3%A7%C3%A3o-com-embedding-baseado-em-%C3%A1rvore-de-decis%C3%A3o)), a clusterização é realizada em 3 etapas. Mas quais são os algoritmos mais eficientes em cada etapa? E quais são os melhores valores para seus hiperparâmetros?
 
 Para responder a esses questionamentos, rodamos a seguinte sequência de códigos de otimização (seção 6 do código):
 
@@ -433,18 +430,18 @@ O modelo com 22 clusters pode ser visualizado em duas dimensões conforme imagem
 
 Uma vez obtida a divisão de clusters considerada ótima sob os critérios de *machine learning*, partiu-se para sua avaliação em termos de atendimento aos requisitos de negócio para implantação de estratégias de marketing.
 
-Apuradas as estatísticas para cada cluster (seção 7.2 do código), verificou-se que a manutenção de um elevado número de grupos traria dificuldades para a análise por parte dos gerentes de negócio e das equipes de marketing. O interesse principal já manifestado pela empresa recaía nos clientes com elevada geração de receita.
+Apuradas as estatísticas para cada cluster (seção 7.2 do código), verificou-se que a manutenção de um elevado número de grupos não seria apropriado para a análise por parte dos gerentes de negócio e das equipes de marketing. O interesse principal já manifestado pela empresa recaía nos clientes com elevada geração de receita.
 
 A solução encontrada foi a de manter a clusterização ótima, obtida com 22 clusters, para num segundo momento fazer a fusão de clusters de menor interesse.
 
 Assim, foram mantidos os 4 clusters de maior geração de receita média por cliente, e junção dos demais 18 clusters em apenas 4, da seguinte forma (seção 7.3 do código):
 
-- dentre os 18, fusão-1 dos clusters com alta receita e alta recência,
-- fusão-2 dos clusters com alta receita e baixa recência,
-- fusão-3 dos com baixa receita e alta recência, e
-- fusão-4 dos com baixa receita e baixa recência.
+- dentre os 18, fusão n.1: clusters com alta receita e alta recência,
+- fusão n.2: clusters com alta receita e baixa recência,
+- fusão n.3: clusters com baixa receita e alta recência, e
+- fusão n.4: clusters com baixa receita e baixa recência.
 
-O resultado gráfico da fusão de clusters pode ser observado na imagem a seguir (seção 7.3 do código), na qual os quatro clusters mais importantes foram marcados com cruzes, o de menor receita e mais populoso ("*Lost Customers*") foi marcado com quadrados e os demais com círculos:
+O resultado gráfico da fusão de clusters pode ser observado na imagem a seguir (seção 7.3 do código), na qual os quatro clusters mais importantes foram marcados com cruzes, o mais populoso e de menor receita ("*Lost Customers*") foi marcado com quadrados e os demais com círculos:
 
 <table align="center">
 <tr><td>
@@ -556,7 +553,7 @@ Por fim, apresenta-se abaixo a listagem de clusters, incluindo uma denominação
   </tr>
 </table>
 
-Alguns dos dados acima podem ser comparados por meio dos gráficos a seguir, que mostram as características de número de clientes, receita bruta média, e relação entre receita bruta média e recência.
+Alguns dos dados acima são comparados por meio dos gráficos a seguir, mostrando as características de número de clientes, receita bruta média, e relação entre receita bruta média e recência.
 
 ![banner](img/cluster_graf_pt.png)
 
@@ -577,6 +574,13 @@ Hipótese <b>FALSA</B>: a taxa de devolução do cluster-0 "*Elite Spenders*" é
 
 O sistema de *machine learning* resultante é aquele dado pelo arquivo [Jupyter Notebook](https://github.com/manoelmendonca/customers_clustering/blob/main/notebooks/insider_customers.ipynb) desenvolvido ao longo deste projeto e disponível no repositório do GitHub.
 
+O sistema se baseia em procedimento de clusterização com *embedding* baseado em árvore de decisão ([seção 7](#7-clusteriza%C3%A7%C3%A3o-com-embedding-baseado-em-%C3%A1rvore-de-decis%C3%A3o)), seguida da fusão dos clusters considerados de menor interesse segundo critérios de negócio ([seção 10](#10-an%C3%A1lise-dos-clusters-segundo-crit%C3%A9rios-de-neg%C3%B3cio)). As principais etapas da estratégia de *machine learning* são:
+
+- uso de *random forest* para classificação dos indivíduos,
+- uso de UMAP para redução de dimensionalidade das folhas geradas pela *random forest*,
+- uso de GMM para clusterização da base reduzida, e
+- fusão de clusters com base em critérios de negócio.
+
 
 # 13. RESULTADOS-III: DASHBOARD EM POWER BI
 
@@ -590,7 +594,7 @@ A segunda tela proporciona o acesso a informações específicas dos clientes in
 
 ![banner](img/dashboard_2.png)
 
-A terceira tela apresenta um mapa-mundi com a divisão geográfica dos clientes
+A terceira tela apresenta um mapa-mundi indicando a localização geográfica dos clientes
 
 ![banner](img/dashboard_3.png)
 
