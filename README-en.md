@@ -293,11 +293,11 @@ The constructed indicators were as follows:
 </table>
 
 
-## 5.5. Feature Engineering: the countries
+## 5.5. Feature Engineering: the Countries
 
 From the information on the customers' countries, an attempt was made to create indicators using one-hot encoding. However, this procedure did not result in an improvement in the clustering outcomes, so its use in the project was discarded.
 
-## 5.6. Feature engineering: revenue by day of the week and month
+## 5.6. Feature Engineering: revenue by day of the week and month
 
 Idea: Is there any similarity among customers who always buy on Mondays, or on Saturdays? Similarly, are there similarities among customers who always make purchases on the 10th of each month?
 
