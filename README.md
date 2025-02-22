@@ -37,11 +37,11 @@ A solução para o problema de negócio descrito está na utilização de algori
 
 Conforme apresentado acima, o objetivo é treinar algoritmos de clusterização para identificar os clientes aptos a participarem da campanha de marketing PROGRAMA DE FIDELIDADE INSIDERS. Assim, a solução apresentada compreende a entrega dos seguintes resultados:
 
-1. Resultado nº 1 - Insights relacionados ao rol de clientes, em especial quanto aos clientes mais aptos para participação no PROGRAMA INSIDERS.
+1. [Resultado nº 1](#11-resultado-i-principais-insights-de-neg%C3%B3cio) - Insights relacionados ao rol de clientes, em especial quanto aos clientes mais aptos para participação no PROGRAMA INSIDERS.
 
-2. Resultado nº 2 - Sistema de <i>machine learning</i> em linguagem Python para segmentação de clientes.
+2. [Resultado nº 2](#12-resultado-ii-sistema-de-machine-learning-para-segmenta%C3%A7%C3%A3o-de-clientes) - Sistema de <i>machine learning</i> em linguagem Python para segmentação de clientes.
 
-3. Resultado nº 3 - Dashboard em Power BI para utilização pela equipe de marketing, permitindo a visualização dinâmica dos clusters, seus principais indicadores de desempenho (KPIs), e o rol de clientes integrantes de cada cluster.
+3. [Resultado nº 3](#13-resultados-iii-dashboard-em-power-bi) - Dashboard em Power BI para utilização pela equipe de marketing, permitindo a visualização dinâmica dos clusters, seus principais indicadores de desempenho (KPIs), e o rol de clientes integrantes de cada cluster.
 
 
 ## 3.2. Estratégia de Solução
@@ -128,7 +128,7 @@ A partir dessas informações, podemos visualizar a base de dados ECOMMERCE.CSV 
 A verificação detalhada dos dados demandou: carga do arquivo de dados, verificação de conteúdo, tratamento dos dados faltantes - NaN, estatística descritiva e observação detalhada dos dados, eliminação de linhas e colunas, e *feature engineering*.
 
 
-O código pode ser consultado nas seções 0 a 3 do arquivo [Jupyter Notebook](https://github.com/manoelmendonca/clustering2024_priv/blob/main/notebooks/insider_customers_v1.ipynb). Alguns aspectos mais importantes são comentados a seguir.
+O código pode ser consultado nas seções 0 a 3 do arquivo [Jupyter Notebook](https://github.com/manoelmendonca/customers_clustering/blob/main/notebooks/insider_customers.ipynb). Alguns aspectos mais importantes são comentados a seguir.
 
 ## 5.1. Tratamento dos dados faltantes (NaN)
 
@@ -142,7 +142,7 @@ Como última observação, caso esses 135.080 registros sejam importantes para u
 
 ## 5.2. Estatística descritiva
 
-A seção 1.5 do código apresenta notas detalhadas descrevendo as particularidades da base de dados, bem assim a conclusão quanto a manutenção ou deleção dos dados em cada caso. O objetivo de tais notas foi o de garantir a máxima qualidade dos dados a serem apresentados para os algoritmos de *machine learning*. Aos interessados, sugerimos que leiam diretamente a seção 1.5 no [notebook](https://github.com/manoelmendonca/clustering2024_priv/blob/main/notebooks/insider_customers_v1.ipynb).
+A seção 1.5 do código apresenta notas detalhadas descrevendo as particularidades da base de dados, bem assim a conclusão quanto a manutenção ou deleção dos dados em cada caso. O objetivo de tais notas foi o de garantir a máxima qualidade dos dados a serem apresentados para os algoritmos de *machine learning*. Aos interessados, sugerimos que leiam diretamente a seção 1.5 no [notebook](https://github.com/manoelmendonca/customers_clustering/blob/main/notebooks/insider_customers.ipynb).
 
 As variáveis numéricas têm as características apresentadas na tabela abaixo (seção 1.5.1 do código).
 
@@ -575,7 +575,7 @@ Hipótese <b>FALSA</B>: a taxa de devolução do cluster-0 "*Elite Spenders*" é
 
 # 12. RESULTADO-II: SISTEMA DE *MACHINE LEARNING* PARA SEGMENTAÇÃO DE CLIENTES
 
-O sistema de *machine learning* resultante é aquele dado pelo arquivo [Jupyter Notebook](https://github.com/manoelmendonca/clustering2024_priv/blob/main/notebooks/insider_customers_v1.ipynb) desenvolvido ao longo deste projeto e disponível no repositório do GitHub.
+O sistema de *machine learning* resultante é aquele dado pelo arquivo [Jupyter Notebook](https://github.com/manoelmendonca/customers_clustering/blob/main/notebooks/insider_customers.ipynb) desenvolvido ao longo deste projeto e disponível no repositório do GitHub.
 
 
 # 13. RESULTADOS-III: DASHBOARD EM POWER BI
