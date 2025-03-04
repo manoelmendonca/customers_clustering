@@ -9,7 +9,7 @@ MACHINE LEARNING PROJECT<br>HIGH VALUE CUSTOMERS IDENTIFICATION<br>
 
 # 1. INTRODUCTION
 
-This report describes a Data Science project that involves the creation of a **clustering algorithm** using machine learning to analyze customer behavior in an e-commerce company and segment them into groups with similar characteristics. The goal is to support the development of a targeted marketing strategy.
+This report describes a Data Science project that involves the creation of a **clustering algorithm** using machine learning to analyze customers' behavior in an e-commerce company and segment them into groups with similar characteristics. The goal is to support the development of a targeted marketing strategy.
 
 In this project, we utilized the following tools and techniques:
 
