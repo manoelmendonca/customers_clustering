@@ -9,7 +9,16 @@ MACHINE LEARNING PROJECT<br>HIGH VALUE CUSTOMERS IDENTIFICATION<br>
 
 # 1. INTRODUCTION
 
-What is this project about? The challenge is to create a system capable of analyzing the behavior of customers from an e-commerce company and to categorize them into groups with similar characteristics, aiming to support the implementation of a marketing strategy.
+This report describes a Data Science project that involves the creation of a **clustering algorithm** using machine learning to analyze customer behavior in an e-commerce company and segment them into groups with similar characteristics. The goal is to support the development of a targeted marketing strategy.
+
+In this project, we utilized the following tools and techniques:
+
+- **Tools**: VS-Code, Jupyter Notebook, Mini Conda, GitHub, GPT-4  
+- **Programming & Libraries**: Python, Pandas, Numpy, Scikit-Learn, Matplotlib, Seaborn  
+- **Machine Learning Models**: RandomForest, ExtraTrees, LightGBM, CatBoost, XGBoost  
+- **Dimensionality Reduction**: UMAP, t-SNE, PCA  
+- **Clustering Algorithms**: Gaussian Mixture Model, K-Means  
+- **Tree-based Embedding**: Using RandomForest & UMAP  
 
 As will be presented, using this project, it was possible to build a system capable of performing customer clustering, along with a front-end interface that allows business managers and marketing team to utilize it.
 

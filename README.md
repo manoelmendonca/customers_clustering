@@ -9,7 +9,16 @@ PROJETO DE <i>MACHINE LEARNING</i><br>IDENTIFICAÇÃO DE CLIENTES DE ALTO VALOR<
 
 # 1. INTRODUÇÃO
 
-O que é este trabalho? O desafio é criar um sistema capaz de analisar o comportamento dos clientes de uma empresa de e-commerce e fazer sua divisão em grupos de clientes com características semelhantes, com vistas a subsidiar a realização de uma estratégia de marketing.
+Este relatório descreve um projeto de Ciência de Dados que consiste na criação de um **algoritmo de clusterização** utilizando *machine learning* capaz de analisar o comportamento dos clientes de uma empresa de e-commerce e fazer sua divisão em grupos de clientes com características semelhantes, com vistas a subsidiar a realização de uma estratégia de marketing.
+
+Neste projeto, fizemos uso das seguintes ferramentas e técnicas:
+
+- **Ferramentas**: VS-Code, Jupyter Notebook, Mini Conda, GitHub, GPT-4
+- **Programação & Bibliotecas**: Python, Pandas, Numpy, Scikit-Learn, Matplotlib, Seaborn
+- **Modelos de Machine Learning**: RandomForest, ExtraTrees, LightGbm, CatBoost, XGBoost
+- **Redução de Dimensionalidade**: UMAP, t-SNE, PCA
+- **Algoritmos de Clusterização**: *Gaussian Mixture Model*, K-Means
+- **Tree-based embedding**: usando RandomForest & UMAP
 
 Conforme será apresentado a seguir, com o uso do presente projeto foi possível construir um sistema capaz de realizar a referida clusterização de clientes, e com uma interface de *front-end* capaz de permitir a utilização por parte dos gerentes de negócio e equipe de marketing.
 
