@@ -18,7 +18,8 @@ Neste projeto, fizemos uso das seguintes ferramentas e técnicas:
 - **Modelos de Machine Learning**: RandomForest, ExtraTrees, LightGbm, CatBoost, XGBoost
 - **Redução de Dimensionalidade**: UMAP, t-SNE, PCA
 - **Algoritmos de Clusterização**: *Gaussian Mixture Model*, K-Means
-- **Tree-based embedding**: usando RandomForest & UMAP
+- **Tree-based Enbedding**: usando RandomForest & UMAP
+- **Interface com o Usuário**: *Dashboard* em PowerBI.
 
 Conforme será apresentado a seguir, com o uso do presente projeto foi possível construir um sistema capaz de realizar a referida clusterização de clientes, e com uma interface de *front-end* capaz de permitir a utilização por parte dos gerentes de negócio e equipe de marketing.
 
